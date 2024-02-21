@@ -1,0 +1,521 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "E commerce",
+    "dateExported": "2024-02-12T11:34:54.434Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "8c06c4c3-8668-4fa0-86ba-f9f97fafc3c6",
+            "name": "category",
+            "containerId": "",
+            "created": "2024-01-23T01:27:05.458Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "ab625069-b87e-4612-b84f-aa74afa5c1cb",
+            "name": "subCategory",
+            "containerId": "",
+            "created": "2024-01-23T01:27:05.459Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "f2249936-67c0-4547-839f-1d3075524d70",
+            "name": "coupon",
+            "containerId": "",
+            "created": "2024-01-23T14:26:01.520Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "6223bd53-6ef1-4040-87b0-6f8eedea6c9f",
+            "name": "brand",
+            "containerId": "",
+            "created": "2024-01-27T01:58:38.748Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "5dd1a852-1820-4703-b403-6af3e97d8f66",
+            "name": "auth",
+            "containerId": "",
+            "created": "2024-02-01T17:26:16.238Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "f7b16bf0-93f8-4ac2-ba34-bf5913ff6453",
+            "name": "product",
+            "containerId": "",
+            "created": "2024-02-11T13:43:54.870Z",
+            "sortNum": 60000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "464cb0b7-26e9-4e75-b6d1-0603f9de211f",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "8c06c4c3-8668-4fa0-86ba-f9f97fafc3c6",
+            "name": "createCategory",
+            "url": "{{host}}category/",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-01-23T01:27:05.458Z",
+            "modified": "2024-02-11T13:43:17.565Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Hamada__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRhbWFsOTAxODJAYWxpYnJzLmNvbSIsIl9pZCI6IjY1Yzc2ODJjNzJjMjQwOTRhYzI2MWZlNCIsImlhdCI6MTcwNzY1ODk2MywiZXhwIjoxNzA3NzQ1MzYzfQ.9wQYyCl_s8jElY1LZv4tlJ5mkaRC7jMtt5jJhW6wArQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "new sun"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\Windows 10\\Desktop\\2.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "091062b1-9894-4548-904c-543c2c78e1f5",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "8c06c4c3-8668-4fa0-86ba-f9f97fafc3c6",
+            "name": "getCategories",
+            "url": "{{host}}category",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-01-23T01:27:05.459Z",
+            "modified": "2024-01-23T01:27:05.459Z",
+            "headers": []
+        },
+        {
+            "_id": "089e7bf2-5fb2-425c-81f7-971f324960e5",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "8c06c4c3-8668-4fa0-86ba-f9f97fafc3c6",
+            "name": "updateCategory",
+            "url": "{{host}}category/65c76ab7a4623a0433ebcbbe",
+            "method": "PUT",
+            "sortNum": 30000,
+            "created": "2024-01-23T01:27:05.460Z",
+            "modified": "2024-02-10T12:36:49.792Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Hamada__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRhbWFsOTAxODJAYWxpYnJzLmNvbSIsIl9pZCI6IjY1Yzc2ODJjNzJjMjQwOTRhYzI2MWZlNCIsImlhdCI6MTcwNzU2NzIzMywiZXhwIjoxNzA3NjUzNjMzfQ.e2Om-FrU3Ug0L1DFKeYlsXEHzZeCLvxveP1_Qraz1EA"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "cars machines"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\Windows 10\\Desktop\\2.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "f5ea3b54-a35e-4345-a095-a61a334ddc11",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "8c06c4c3-8668-4fa0-86ba-f9f97fafc3c6",
+            "name": "getCategoryById ",
+            "url": "{{host}}category/65ac679fe84b0967fd55f5be",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-01-23T01:27:05.461Z",
+            "modified": "2024-01-23T01:27:05.461Z",
+            "headers": []
+        },
+        {
+            "_id": "32cd4237-4130-42c5-b4c7-5194ece27e74",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "ab625069-b87e-4612-b84f-aa74afa5c1cb",
+            "name": "createSubCatogary",
+            "url": "{{host}}category/65aefe2913ea5c5ae091ffbb/subCategory",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-01-23T01:27:05.463Z",
+            "modified": "2024-02-11T13:51:02.938Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Hamada__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRhbWFsOTAxODJAYWxpYnJzLmNvbSIsIl9pZCI6IjY1Yzc2ODJjNzJjMjQwOTRhYzI2MWZlNCIsImlhdCI6MTcwNzY1ODk2MywiZXhwIjoxNzA3NzQ1MzYzfQ.9wQYyCl_s8jElY1LZv4tlJ5mkaRC7jMtt5jJhW6wArQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "new sun"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\Windows 10\\Desktop\\2.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "4ddaf15e-32d3-4435-a016-0b0811f9a1e8",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "ab625069-b87e-4612-b84f-aa74afa5c1cb",
+            "name": "getSubCategories ",
+            "url": "{{host}}category/65aefe2913ea5c5ae091ffbb/subCategory",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-01-23T01:27:05.464Z",
+            "modified": "2024-01-23T01:27:05.464Z",
+            "headers": []
+        },
+        {
+            "_id": "629518d4-0098-4ccb-8399-f5443180a85a",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "ab625069-b87e-4612-b84f-aa74afa5c1cb",
+            "name": "getSubCategoryById",
+            "url": "{{host}}category/65aefe2913ea5c5ae091ffbb/subCategory/65aefe6413ea5c5ae091ffbf",
+            "method": "GET",
+            "sortNum": 75000,
+            "created": "2024-01-23T01:27:05.462Z",
+            "modified": "2024-01-23T01:27:05.462Z",
+            "headers": []
+        },
+        {
+            "_id": "fca14dfd-2c3c-427b-ad9c-c9eefe294215",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "ab625069-b87e-4612-b84f-aa74afa5c1cb",
+            "name": "updateSubCategory ",
+            "url": "{{host}}category/65aefe2913ea5c5ae091ffbb/subCategory/65aefe6413ea5c5ae091ffbf",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2024-01-23T01:27:05.465Z",
+            "modified": "2024-01-27T01:34:27.333Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "shazzzzzaa"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\Windows 10\\Desktop\\2.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "b25a0d38-3a63-4f2a-84b8-0204da2c5c03",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "f2249936-67c0-4547-839f-1d3075524d70",
+            "name": "createCoupon",
+            "url": "{{host}}coupon/",
+            "method": "POST",
+            "sortNum": 110000,
+            "created": "2024-01-23T14:44:19.157Z",
+            "modified": "2024-01-27T01:06:42.865Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "specialllll"
+                    },
+                    {
+                        "name": "amount",
+                        "value": "46"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\Windows 10\\Desktop\\2.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "7c583ab6-95f8-44ec-8c4a-ecdcf4850325",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "f2249936-67c0-4547-839f-1d3075524d70",
+            "name": "getCoupons",
+            "url": "{{host}}coupon/",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2024-01-23T15:16:46.013Z",
+            "modified": "2024-01-23T15:17:15.574Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1a991eab-af58-4df0-97bf-98ad42f72092",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "f2249936-67c0-4547-839f-1d3075524d70",
+            "name": "getCouponById",
+            "url": "{{host}}coupon/65afd71753855fd7be67179a",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2024-01-23T15:18:42.091Z",
+            "modified": "2024-01-23T15:19:48.196Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9e3bac52-e0f1-4abd-9b56-691f2bb31a69",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "f2249936-67c0-4547-839f-1d3075524d70",
+            "name": "update coupon",
+            "url": "{{host}}coupon/65b457221f102318c08273b5",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2024-01-27T01:25:12.421Z",
+            "modified": "2024-01-27T01:34:34.431Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "new test200"
+                    },
+                    {
+                        "name": "amount",
+                        "value": "98"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\Windows 10\\Desktop\\2.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "bc619e42-668f-4993-86f3-c6c2d4812916",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "6223bd53-6ef1-4040-87b0-6f8eedea6c9f",
+            "name": "create brand",
+            "url": "{{host}}brand",
+            "method": "POST",
+            "sortNum": 150000,
+            "created": "2024-01-27T01:58:51.127Z",
+            "modified": "2024-02-11T13:52:58.667Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Hamada__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRhbWFsOTAxODJAYWxpYnJzLmNvbSIsIl9pZCI6IjY1Yzc2ODJjNzJjMjQwOTRhYzI2MWZlNCIsImlhdCI6MTcwNzY1ODk2MywiZXhwIjoxNzA3NzQ1MzYzfQ.9wQYyCl_s8jElY1LZv4tlJ5mkaRC7jMtt5jJhW6wArQ"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "new sun"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\Windows 10\\Desktop\\2.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "714b4d73-65b3-4b9d-a16e-f3325e49ae0c",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "6223bd53-6ef1-4040-87b0-6f8eedea6c9f",
+            "name": "get Brands ",
+            "url": "{{host}}brand",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2024-01-27T02:11:58.904Z",
+            "modified": "2024-01-27T02:12:13.650Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "356494e3-5a40-40ac-8c81-8d5b85b7ceeb",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "6223bd53-6ef1-4040-87b0-6f8eedea6c9f",
+            "name": "get Brand By Id",
+            "url": "{{host}}brand/65b46394205e2da6abbc3c79",
+            "method": "GET",
+            "sortNum": 170000,
+            "created": "2024-01-27T02:12:22.043Z",
+            "modified": "2024-01-27T02:13:06.017Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "28bec5b0-be19-4c5b-8643-100eb23d2e13",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "6223bd53-6ef1-4040-87b0-6f8eedea6c9f",
+            "name": "update brand",
+            "url": "{{host}}brand/65b46394205e2da6abbc3c79",
+            "method": "PUT",
+            "sortNum": 170000,
+            "created": "2024-01-27T02:13:55.033Z",
+            "modified": "2024-01-27T02:14:42.660Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "nike"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "image",
+                        "value": "c:\\Users\\Windows 10\\Desktop\\2.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "8d095864-85dc-4f8a-b396-fc9d55a66a71",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "5dd1a852-1820-4703-b403-6af3e97d8f66",
+            "name": "signUp",
+            "url": "{{host}}auth/signUp",
+            "method": "POST",
+            "sortNum": 180000,
+            "created": "2024-02-01T17:26:29.040Z",
+            "modified": "2024-02-02T00:43:23.861Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"tamal90182@alibrs.com\",\n  \"password\":\"85858585\",\n  \"cpassword\":\"85858585\",\n  \"userName\":\"body\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b51a1e9a-9399-4439-815a-cc617e087f7a",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "5dd1a852-1820-4703-b403-6af3e97d8f66",
+            "name": "log in",
+            "url": "{{host}}auth/logIn",
+            "method": "POST",
+            "sortNum": 190000,
+            "created": "2024-02-02T00:01:10.526Z",
+            "modified": "2024-02-02T00:43:52.071Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n   \"email\":\"tamal90182@alibrs.com\",\n  \"password\":\"85858585\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "af49363c-6862-4c92-bfcc-3ca14f8eda57",
+            "colId": "0cd50f7d-1d3d-4497-bc51-926d486b0363",
+            "containerId": "f7b16bf0-93f8-4ac2-ba34-bf5913ff6453",
+            "name": "add product",
+            "url": "{{host}}product",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2024-02-11T13:44:11.391Z",
+            "modified": "2024-02-12T11:29:17.324Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Hamada__eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRhbWFsOTAxODJAYWxpYnJzLmNvbSIsIl9pZCI6IjY1Yzc2ODJjNzJjMjQwOTRhYzI2MWZlNCIsImlhdCI6MTcwNzczNzI4NiwiZXhwIjoxNzA3ODIzNjg2fQ.Rjv4vDIXCTDs-6tZLmmqd6OQyLOz4AQP5UUPa9-XQ3c"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "categoryId",
+                        "value": "65c8cef5f01000f72dbc2e47"
+                    },
+                    {
+                        "name": "subCategoryId",
+                        "value": "65c8d0c66dede01a5bc815c4"
+                    },
+                    {
+                        "name": "brandId",
+                        "value": "65c8d13a6dede01a5bc815c8"
+                    },
+                    {
+                        "name": "name",
+                        "value": "iphone 20"
+                    },
+                    {
+                        "name": "price",
+                        "value": "90000"
+                    },
+                    {
+                        "name": "stock",
+                        "value": "5"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "mainImage",
+                        "value": "c:\\Users\\Windows 10\\Desktop\\2.jpg"
+                    },
+                    {
+                        "name": "subImage",
+                        "value": "c:\\Users\\Windows 10\\Desktop\\WhatsApp Image 2024-01-16 at 20.34.37_7f16e1ac.jpg"
+                    }
+                ]
+            },
+            "tests": []
+        }
+    ]
+}
