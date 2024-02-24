@@ -57,29 +57,64 @@ export const createOrder=asyncHandler(
         if(couponName){
             await couponModel.updateOne({_id:coupon._id},{$push:{usedBy:_id}})
         }
-        if(order.paymentType=='card'){
-            const stripe =new Stripe(process.env.API_KEY_PAYMENT)
-            const session= payment({
-                stripe,
+        // if(order.paymentType=='card'){
+        //     const stripe =new Stripe(process.env.API_KEY_PAYMENT)
+        //     const session= payment({
+        //         stripe,
+        //         success_url:`${process.env.SUCCESS_URL}/${order._id}`,
+        //         cancel_url:`${process.env.CANCEL_URL}/${order._id}`,
+        //         customer_email:req.user.email,
+        //         line_items:order.products.map((element)=>{
+        //             return{
+        //                 price_data:{
+        //                             currency:"EGP",
+        //                             product_data:{
+        //                                 name:element.name
+        //                             },
+        //                             unit_amount:element.unitPrice*100
+        //                         },
+        //                         quantity:element.quantity,
+        //             };
+        //         })
+        //     }) 
+        //     console.log(session);
+        //     return res.status(201).json({message:'done',order,session})
+        // }
+        if(order.paymentTypes="card"){
+            const stripe=new Stripe(process.env.STRIPE_KEY);
+            let couponStripe
+            // if(couponName){
+            //     couponStripe=await stripe.coupons.create({
+            //         percent_off:amount,
+            //         duration:"once"
+            //     })
+            // }
+
+            const session=await payment({
+                metadata:{
+                    orderid: order._id.toString(),
+                },
+                // discounts: amount ? [{ coupon: couponStripe.id }] : [],
                 success_url:`${process.env.SUCCESS_URL}/${order._id}`,
                 cancel_url:`${process.env.CANCEL_URL}/${order._id}`,
                 customer_email:req.user.email,
                 line_items:order.products.map((element)=>{
                     return{
-                        price_data:{
-                                    currency:"EGP",
-                                    product_data:{
-                                        name:element.name
+
+                                    price_data:{
+                                        currency:"usd",
+                                        product_data:{
+                                            name:element.name
+                                        },
+                                        unit_amount:element.unitPrice*100
                                     },
-                                    unit_amount:element.unitPrice*100
-                                },
-                                quantity:element.quantity,
-                    };
+                                    quantity:element.quantity
+
+                    }
                 })
-            }) 
-            console.log(session);
-            return res.status(201).json({message:'done',order,session})
-        }
+            })
+            return res.json({message:"Done",order,session})
+          }
         return res.status(201).json({message:'done',order})
     }
 )
