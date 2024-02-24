@@ -11,7 +11,7 @@ const router=Router()
 
 router
         .post('/',
-        auth(roles.Admin),
+        auth(roles.User),
         uploadFileMulter(filevalidtion.image).single('image'),
             validation(brandValidation.createBrandSchema),
             brandController.createBrand

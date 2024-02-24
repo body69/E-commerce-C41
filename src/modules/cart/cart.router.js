@@ -10,7 +10,7 @@ const router=Router()
 router
     .post('/',
     validation(cartValidation.tokenSchema,true),
-    auth([roles.Admin]),
+    auth([roles.User]),
     // validation(productValidation.createProductSchema),
     cartController.addToCart)
    

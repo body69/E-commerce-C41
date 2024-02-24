@@ -10,7 +10,7 @@ import auth, { roles } from "../../middleware/auth.js";
 
 router
     .post('/',
-    auth(roles.Admin),
+    auth(roles.User),
     uploadFileMulter(filevalidtion.image).single('image'),
     validation(subCategoryValidation.createSubCategorySchema),
         subCategoryController.createSubCatogary

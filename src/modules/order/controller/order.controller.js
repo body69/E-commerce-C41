@@ -1,8 +1,10 @@
+import Stripe from "stripe";
 import couponModel from "../../../DB/model/Coupon.model.js";
 import orderModel from "../../../DB/model/Order.model.js";
 import productModel from "../../../DB/model/Product.model.js";
 import cartModel from "../../../DB/model/cart.model.js";
 import { asyncHandler } from "../../../utils/errorHandling.js";
+import payment from "../../../utils/payment.js";
 
 export const createOrder=asyncHandler(
     async(req,res,next)=>{
@@ -54,6 +56,29 @@ export const createOrder=asyncHandler(
         const order=await orderModel.create(req.body)
         if(couponName){
             await couponModel.updateOne({_id:coupon._id},{$push:{usedBy:_id}})
+        }
+        if(order.paymentType=='card'){
+            const stripe =new Stripe(process.env.API_KEY_PAYMENT)
+            const session= payment({
+                stripe,
+                success_url:`${process.env.SUCCESS_URL}/${order._id}`,
+                cancel_url:`${process.env.CANCEL_URL}/${order._id}`,
+                customer_email:req.user.email,
+                line_items:order.products.map((element)=>{
+                    return{
+                        price_data:{
+                                    currency:"EGP",
+                                    product_data:{
+                                        name:element.name
+                                    },
+                                    unit_amount:element.unitPrice*100
+                                },
+                                quantity:element.quantity,
+                    };
+                })
+            }) 
+            console.log(session);
+            return res.status(201).json({message:'done',order,session})
         }
         return res.status(201).json({message:'done',order})
     }

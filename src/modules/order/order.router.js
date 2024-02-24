@@ -10,7 +10,7 @@ const router=Router()
 router
     .post('/',
     validation(orderValidation.tokenSchema,true),
-    auth([roles.Admin]),
+    auth([roles.User]),
     validation(orderValidation.createOrderSchema),
     orderController.createOrder)
     

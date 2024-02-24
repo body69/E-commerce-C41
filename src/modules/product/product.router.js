@@ -11,7 +11,7 @@ const router=Router()
 router
     .post('/',
     validation(productValidation.tokenSchema,true),
-    auth([roles.Admin]),
+    auth([roles.User]),
     uploadFileMulter(filevalidtion.image).fields([
         {name:'mainImage',maxCount:1},
         {name:'subImage',maxCount:5}
