@@ -18,7 +18,6 @@ const orderSchema= new Schema({
                 type:Types.ObjectId,
                 ref:'Product',
                 require:true,
-                unique:true
             },
             quantity:{
                 type:Number,
