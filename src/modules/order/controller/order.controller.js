@@ -14,7 +14,7 @@ export const createOrder=asyncHandler(
         if(!cart?.products?.length){
             return next(new Error('invalid cart id',{cause:404}))
         }
-        let amount=0
+        
         let coupon={amount:0};
         if(couponName){
                  coupon=await couponModel.findOne({name:couponName,usedBy:{$nin:_id}})
@@ -86,7 +86,7 @@ export const createOrder=asyncHandler(
             let couponStripe
             if(couponName){
                 couponStripe=await stripe.coupons.create({
-                    percent_off:amount,
+                    percent_off:coupon.amount,
                     duration:"once"
                 })
             }
@@ -95,7 +95,7 @@ export const createOrder=asyncHandler(
                 metadata:{
                     orderId: order._id.toString(),
                 },
-                discounts: amount ? [{ coupon: couponStripe.id }] : [],
+                discounts: couponName ? [{ coupon: couponStripe.id }] : [],
                 success_url:`${process.env.SUCCESS_URL}/${order._id}`,
                 cancel_url:`${process.env.CANCEL_URL}/${order._id}`,
                 customer_email:req.user.email,
