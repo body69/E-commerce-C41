@@ -82,7 +82,7 @@ export const createOrder=asyncHandler(
         //     return res.status(201).json({message:'done',order,session})
         // }
         if(order.paymentTypes="card"){
-            const stripe=new Stripe(process.env.STRIPE_KEY);
+            const stripe=new Stripe(process.env.API_KEY_PAYMENT)
             let couponStripe
             if(couponName){
                 couponStripe=await stripe.coupons.create({
