@@ -14,6 +14,13 @@ import { globalError } from './utils/errorHandling.js'
 
 const bootstrap = (app,express)=>{
     connection()
+    app.use((req,res,next)=>{
+        if(req.originalUrl=='order/webhook'){
+            return next();
+        }
+        return express.json({})(req,res,next);
+    })
+
     app.use(express.json())
     app.use('/category',categoryRouter)
     app.use('/subCategory',subCategoryRouter)

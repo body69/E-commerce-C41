@@ -1,4 +1,4 @@
-import { Router } from "express";
+import express,{ Router } from "express";
 import * as orderController from "./controller/order.controller.js";
 import auth, { roles } from "../../middleware/auth.js";
 import validation from "../../middleware/validation.js";
@@ -26,6 +26,11 @@ router
     validation(orderValidation.cancelOrderSchema),
     orderController.deliveredOrder)
    
-   
+
+
+// This is your Stripe CLI webhook secret for testing your endpoint locally.
+
+router.post('/webhook', express.raw({type: 'application/json'}),orderController.webHook)
+
 
 export default router

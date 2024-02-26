@@ -157,3 +157,31 @@ export const deliveredOrder=asyncHandler(
         return res.status(200).json({message:"Done",updateOrder})
     }
 )
+
+
+export const webHook =asyncHandler(
+     async(req, res,next) => {
+        const stripe=new Stripe(process.env.API_KEY_PAYMENT)
+        const endpointSecret = process.env.END_POINT_SECRET
+        const sig = req.headers['stripe-signature'];
+        
+        let event;
+      
+        try {
+          event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
+        } catch (err) {
+          res.status(400).send(`Webhook Error: ${err.message}`);
+          return;
+        }
+      
+        // Handle the event
+        if (event.type=='checkout.session.completed') {
+            await orderModel.updateOne({_id:event.data.object.orderId},{status:"placed"})
+            return res.status(200).json({message:"done"})
+        }else{
+            return next(new Error("failed to payment please try again"))
+        }
+       
+      }
+      )
+      ;
