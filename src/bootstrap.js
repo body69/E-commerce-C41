@@ -21,7 +21,7 @@ const bootstrap = (app,express)=>{
         return express.json({})(req,res,next);
     })
 
-    app.use(express.json())
+  
     app.use('/category',categoryRouter)
     app.use('/subCategory',subCategoryRouter)
     app.use('/coupon',couponRouter)
