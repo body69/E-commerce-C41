@@ -15,7 +15,7 @@ import { globalError } from './utils/errorHandling.js'
 const bootstrap = (app,express)=>{
     connection()
     app.use((req,res,next)=>{
-        if(req.originalUrl=='order/webhook'){
+        if(req.originalUrl=='/order/webhook'){
             return next();
         }
         return express.json({})(req,res,next);
